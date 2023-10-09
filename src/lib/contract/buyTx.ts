@@ -1,32 +1,31 @@
-import { ErgoAddress, OutputBuilder, RECOMMENDED_MIN_FEE_VALUE, SAFE_MIN_BOX_VALUE, TransactionBuilder } from "@fleet-sdk/core";
+import { ErgoAddress, OutputBuilder, RECOMMENDED_MIN_FEE_VALUE, TransactionBuilder } from "@fleet-sdk/core";
 import { SByte, SColl} from "@fleet-sdk/serializer";
 
-export async function buyTx(buyBox:any, senderBase58PK: string, utxos:Array<any>, height: number,tokenPrice:bigint,sellerBase58PK:string,devBase58PK:string): any{
-    const myAddr = ErgoAddress.fromBase58(senderBase58PK)
+const DEV_FEE_DENOMINATOR =100n //1%
 
-    const seller = new OutputBuilder(
-        tokenPrice-tokenPrice/100n,
+export async function buyTx(contractBox:any, buyerBase58PK: string, buyerUtxos:Array<any>, height: number,tokenPrice:bigint,sellerBase58PK:string,devBase58PK:string): any{
+    
+    const buyerAddress = ErgoAddress.fromBase58(buyerBase58PK)
+
+    const sellerBox = new OutputBuilder(
+        tokenPrice-tokenPrice/DEV_FEE_DENOMINATOR,
         sellerBase58PK
     )
     .setAdditionalRegisters({
-        R4: SColl(SByte, buyBox.boxId).toHex(),
+        R4: SColl(SByte, contractBox.boxId).toHex(),
     });
 
-    const fee = new OutputBuilder(
-        tokenPrice/100n,
+    const feeBox = new OutputBuilder(
+        tokenPrice/DEV_FEE_DENOMINATOR,
         devBase58PK
     )
 
-    const output = new OutputBuilder(
-        SAFE_MIN_BOX_VALUE,
-        senderBase58PK
-    ).addTokens(buyBox.assets)
-
     const unsignedMintTransaction = new TransactionBuilder(height)
-        .from([buyBox,...utxos ])
-        .to([seller,fee,output])
-        .sendChangeTo(myAddr)
-        .payFee(RECOMMENDED_MIN_FEE_VALUE * 2n)
+        .configureSelector((selector) => selector.ensureInclusion(contractBox.boxId))
+        .from([contractBox,...buyerUtxos ])
+        .to([sellerBox,feeBox])
+        .sendChangeTo(buyerAddress)
+        .payFee(RECOMMENDED_MIN_FEE_VALUE)
         .build()
         .toEIP12Object();
 

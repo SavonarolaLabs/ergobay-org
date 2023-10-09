@@ -19,10 +19,10 @@
 	<div class="flex flex-col gap-4">
 		<div class="text-slate-500 font-bold">Open Source</div>
 		<div>
-			<a href="https://github.com/c8e4/ergobay-org">Web Interface</a>
+			<a href="https://github.com/SavonarolaLabs/ergobay-org">Web Interface</a>
 		</div>
 		<div>
-			<a href="https://github.com/c8e4/ergobay-org/blob/main/src/lib/contract/SellForErg.ts">Contract</a>
+			<a href="https://github.com/SavonarolaLabs/ergobay-org/blob/main/src/lib/contract/sellForErg.ts">Contract</a>
 		</div>
 		<div>
 			<a href="https://github.com/SavonarolaLabs/ergo-web-template">Web Template</a>

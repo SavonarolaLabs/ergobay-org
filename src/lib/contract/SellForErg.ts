@@ -1,8 +1,8 @@
-export const SellForErg = `
+export const sellForErg = `
 {
     val priceNanoErg     	= SELF.R4[Long].get         // token sale price in nanoErg
-    val sellerPK 			= SELF.R5[GroupElement].get // Public Key of the token seller
-    val devPK			    = SELF.R6[GroupElement].get // dev Public Key
+    val sellerPK 			= SELF.R5[SigmaProp].get // Public Key of the token seller
+    val devPK			    = SELF.R6[SigmaProp].get // dev Public Key
 
     val feeDenom 			= 100000L
     val feeNum   			= 1000L                     // 1% fee
@@ -11,5 +11,5 @@ export const SellForErg = `
     val sellerHappy			= (OUTPUTS(0).value >= priceNanoErg - feeInNanoErg) && (OUTPUTS(0).propositionBytes == sellerPK.propBytes)
     val feePaid				= (feeInNanoErg == 0) ||
                               (OUTPUTS(1).value >= feeInNanoErg && OUTPUTS(1).propositionBytes == devPK.propBytes)
-    sigmaProp(onlyOneBoxSpent && sellerHappy && feePaid) || proveDlog(sellerPK)
+    sigmaProp(onlyOneBoxSpent && sellerHappy && feePaid) || sellerPK
 }`
