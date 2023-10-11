@@ -56,18 +56,17 @@
 	}
 
 	:global(button.btn-secondary) {
-		background-color: #554375;
-		color: #adb0b8;
+		background-color: #809dc0;
+		color: #e0dfdf;
 		padding: 10px 20px;
 		border: none;
 		border-radius: 5px;
 		cursor: pointer;
 		transition: 0.3s;
-		text-transform: uppercase;
-		font-weight: 500;
 	}
 	:global(button.btn-secondary:hover) {
-		background-color: #332153; /* Slightly darker for hover effect */
+		background-color: #a1c0d9; /* Slightly darker for hover effect */
+		color: black;
 	}
 	.main-page {
 		background-position: cover;
