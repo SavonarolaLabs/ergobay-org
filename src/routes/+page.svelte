@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Contract from "$lib/Contract.svelte";
 	import Landing from "$lib/Landing.svelte"
-	let loading = true;
+	let loading = false;
 </script>
 
 <div class="h-full flex flex-col grow main-page">
