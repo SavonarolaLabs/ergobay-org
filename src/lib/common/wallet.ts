@@ -1,5 +1,5 @@
 import { get } from "svelte/store";
-import { selected_wallet_ergo } from "../../store/store.js"
+import { selected_wallet_ergo } from "$lib/store/store.js"
 import { notifier } from "@beyonk/svelte-notifications";
 
 export async function connectErgoWallet(walletName: string) {

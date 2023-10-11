@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { selected_wallet_ergo } from '../../store/store.js';
+	import { selected_wallet_ergo } from '$lib/store/store.js';
 
 
 	let balanceInNanoErg = '0';

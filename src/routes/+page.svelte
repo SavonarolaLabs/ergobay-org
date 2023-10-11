@@ -1,7 +1,15 @@
 <script lang="ts">
-	import Contract from "$lib/Contract.svelte";
 	import Landing from "$lib/Landing.svelte"
+	import { loadOffers, loadStoreFromLocalStorage } from "$lib/store/store.js";
+	import { onMount } from "svelte";
 	let loading = false;
+
+	onMount(init)
+
+	function init(){
+		loadStoreFromLocalStorage();
+		loadOffers();
+	}
 </script>
 
 <div class="h-full flex flex-col grow main-page">
@@ -12,7 +20,6 @@
 	</div>
 	{:else}
 		<Landing></Landing>
-		<Contract></Contract>
 	{/if}
 </div>
 

@@ -16,3 +16,7 @@
 .hand{
     font-family: 'Dancing Script', cursive;
 }
+
+input{
+    background: #00000040;
+}

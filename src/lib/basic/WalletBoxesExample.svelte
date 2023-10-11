@@ -1,6 +1,5 @@
 <script lang="ts">
-	import { assets } from '__sveltekit/paths';
-	import { selected_wallet_ergo } from '../../store/store.js';
+	import { selected_wallet_ergo } from '$lib/store/store.js';
 	import Layout from '../../routes/+layout.svelte';
 
 	let boxes: Array<any> = [];

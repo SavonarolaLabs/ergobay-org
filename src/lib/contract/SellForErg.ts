@@ -13,3 +13,6 @@ export const sellForErg = `
                               (OUTPUTS(1).value >= feeInNanoErg && OUTPUTS(1).propositionBytes == devPK.propBytes)
     sigmaProp(onlyOneBoxSpent && sellerHappy && feePaid) || sellerPK
 }`
+
+export const CONTRACT  = '7BPUsYJNMQp6zCrqGw8qeWqkxdRxd3WYiZxDsNaKdnRyhdGabXEi2bd1PTSNQGSWcCfZkSobKQ9Ua4fvi3b5Siaa65mfnVw4aLzYPUvazLR31P5X2tTy3P5fy93aBKe8Qk3x4oSb5zZfBuAV2nPnHXMqzfzJ1yVEewFBGza3wLwuaQtFU';
+export const DEV_PK    = '9ffXZz5AovJvapPo63TGwdNaRPMUiHo2UkqGavmDGzrUERY9qJ3'

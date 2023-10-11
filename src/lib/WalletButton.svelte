@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { notifier } from '@beyonk/svelte-notifications';
-	import { selected_wallet_ergo } from '../store/store.js';
+	import { selected_wallet_ergo } from '$lib/store/store.js';
 	import Modal from './common/Modal.svelte';
 	import { connectErgoWallet } from './common/wallet.js';
 	let showModal = false;
