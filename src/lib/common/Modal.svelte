@@ -22,7 +22,7 @@
 		<!-- svelte-ignore a11y-autofocus -->
 		<div class="flex justify-end mt-8">
 			<button 
-				class="btn w-full"
+				class="btn-secondary w-full"
 				autofocus on:click={() => {dialog.close(); onBtnClick?onBtnClick():'';}}>
 				<slot name="btn"/>
 			</button>

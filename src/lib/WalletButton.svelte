@@ -30,7 +30,7 @@
 {/if}
 
 {#if $selected_wallet_ergo}
-	<button class="btn" on:click={clickOnNautilusButton}> Disconnect </button>
+	<button class="btn-secondary" on:click={clickOnNautilusButton}> Disconnect </button>
 {:else}
 	<button class="btn" on:click={() => (showModal = true)}> Connect Wallet </button>
 {/if}

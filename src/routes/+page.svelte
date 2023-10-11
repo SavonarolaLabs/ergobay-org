@@ -42,7 +42,7 @@
 	}
 	:global(button.btn) {
 		background-color: #d1d1d1;
-		color: #1b2845;
+		color: #263962;
 		padding: 10px 20px;
 		border: none;
 		border-radius: 5px;
@@ -52,7 +52,7 @@
 		font-weight: 500;
 	}
 	:global(button.btn:hover) {
-		background-color: #b1b1b1; /* Slightly darker for hover effect */
+		background-color: #eeeeee; /* Slightly darker for hover effect */
 	}
 
 	:global(button.btn-secondary) {
@@ -63,6 +63,8 @@
 		border-radius: 5px;
 		cursor: pointer;
 		transition: 0.3s;
+		text-transform: uppercase;
+		font-weight: 500;
 	}
 	:global(button.btn-secondary:hover) {
 		background-color: #a1c0d9; /* Slightly darker for hover effect */
