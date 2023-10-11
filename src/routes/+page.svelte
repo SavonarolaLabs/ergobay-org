@@ -56,7 +56,7 @@
 	}
 
 	:global(button.btn-secondary) {
-		background-color: #809dc0;
+		background-color: #6c84a2;
 		color: #e0dfdf;
 		padding: 10px 20px;
 		border: none;
