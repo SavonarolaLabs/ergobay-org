@@ -54,6 +54,21 @@
 	:global(button.btn:hover) {
 		background-color: #b1b1b1; /* Slightly darker for hover effect */
 	}
+
+	:global(button.btn-secondary) {
+		background-color: #554375;
+		color: #adb0b8;
+		padding: 10px 20px;
+		border: none;
+		border-radius: 5px;
+		cursor: pointer;
+		transition: 0.3s;
+		text-transform: uppercase;
+		font-weight: 500;
+	}
+	:global(button.btn-secondary:hover) {
+		background-color: #332153; /* Slightly darker for hover effect */
+	}
 	.main-page {
 		background-position: cover;
 		background-repeat: no-repeat;

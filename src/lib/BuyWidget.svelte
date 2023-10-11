@@ -52,7 +52,7 @@
         {offer.additionalRegisters.R4.renderedValue/10**9} ERG
         </div>
     
-        <button class="btn p-4" on:click={buy}>
+        <button class="btn-secondary p-4" on:click={buy}>
             buy
         </button>
     </div>
